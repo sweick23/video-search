@@ -1,0 +1,139 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background: #292E37;
+    font-family: 'Indie Flower', cursive;
+}
+header { 
+    
+    
+    width: 100%;
+    padding: 4%;
+  border-radius: 3px;
+    background: black;
+    height: 100px;
+    color: white;
+    
+}
+
+
+h1.left{
+    cursor: pointer;
+    display: none;
+    margin-top: -1%;
+ text-align: center;
+    
+}
+h2{
+    font-size: 40px;
+}
+.search,.sub{
+    display: none;
+}
+
+.one{
+    margin-left: 15%;
+    text-align: center;
+    display: inline;
+}
+
+
+
+input{
+    font-family: 'FontAwesome';
+}
+
+
+.center{
+    margin-top: 15%;
+    text-align: center;
+}
+
+.altText{
+    color: crimson;
+}
+.alt-search{
+    border: 2px inset black;
+    border-radius: 5px;
+    margin-top: 4%;
+    font-size: 18px;
+}
+.altSearch{
+    padding: 40px;
+    width: 150px;
+}
+
+.w100 {
+    width: 100%;
+}
+ul{
+    list-style: none;
+}
+.main{
+    margin-top: 5%;
+   padding: 1%;
+    width: 50%;
+    height: auto;
+    margin: 0  auto;
+    background: white;
+}
+.altPop{
+    float: left;
+    border: 1px solid black;
+    top: auto;
+}
+.remove{
+    
+    
+    display: none; 
+}
+li{
+    padding-left: 10px;
+    display: inline;
+        color: white;
+    list-style: none;
+    
+}
+.results{
+    margin-top: 15%;
+}
+#left{
+    
+    margin-left: -5%;
+    margin-top: -.5%;
+    float: left;
+}
+#right{
+    margin-top: -.5%;
+    float: right;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+footer{
+    position: relative;
+    padding-left: -1%;
+    padding-right: 1%;
+padding: 30px;
+background: black;
+      border-radius: 3px;  
+}
+.home{
+    cursor: pointer;
+    
+}
+p{
+    text-align: center;
+    color: crimson;
+}
+.space{
+    text-align: center;
+    color: crimson;
+}
+.flash{
+    border: 2px solid crimson;
+}
+
