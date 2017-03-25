@@ -4,7 +4,7 @@ $(function() {
     $("form").on("submit", function(e) {
        e.preventDefault();
        
-        
+        var q = $('.alt-search').val();
         var a = $('#search').val();
         
        var request = gapi.client.youtube.search.list({
@@ -15,7 +15,27 @@ $(function() {
             order: "viewCount",
             publishedAfter: "2015-01-01T00:00:00Z"
        }); 
+     var firstRequest = gapi.client.youtube.search.list({
+            part: "snippet",
+            type: "video", 
+           q: q,
+            maxResults: 5,
+            order: "viewCount",
+            publishedAfter: "2015-01-01T00:00:00Z"
+       }); 
      
+       
+       firstRequest.execute(function(response) {
+          var results = response.result;
+          $("#results").html("");
+          $.each(results.items, function(index, item) {
+            $.get("tpl/item.html", function(data) {
+                $("#results").append(tplawesome(data, [{"title":item.snippet.title, "videoid":item.id.videoId}]));
+            });
+          });
+          resetVideoHeight();
+       }); 
+       });
        
        request.execute(function(response) {
           var results = response.result;
@@ -27,12 +47,16 @@ $(function() {
           });
           resetVideoHeight();
        }); 
-       });
+
+    
+   
 
     
     $(window).on("resize", resetVideoHeight);
 });
 
+
+  
 
 function resetVideoHeight() {
     $(".video").css("height", $("#results").width() * 9/16);
